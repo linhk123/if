@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  const name = prompt('nhap ten: ');
+  if (name === 'Admin') {
+    const Admin = prompt('nhap mat khau: ');
+    if (Admin === 'TheMaster') {
+      alert('Welcome');
+    } else if (Admin === 'null') {
+      alert('Canceled');
+    } else {
+      alert('Wrong password');
+    }
+  }
+  else if (name === 'null') {
+    alert('canceld');
+    }
+  else{
+    alert('I don’t know you');
+    }
+
+</script>
+</body>
+</html>
