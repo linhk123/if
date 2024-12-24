@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu lệnh switch-case</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="day" id="day">
+        <input type="button" value="Tính số ngày" onclick="dayCheck()">
+    </form>
+<script>
+    function dayCheck(){
+        let day = parseInt(document.getElementById('day').value);
+        console.log(day);
+        switch(day){
+            case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+                document.write('Tháng'+day+'có 31 ngày')
+                break;
+            case 4: case 6:case 9:case 11:
+                document.write('Tháng'+day+'có 30 ngày')
+                break;
+            case 2:
+                document.write('Tháng'+day+'có 28 hoặc 29 ngày ')
+                break;
+        }
+    }
+</script>
+</body>
+</html>
