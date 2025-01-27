@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ứng dụng Good-Fast-Cheap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin: 10px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<h1>Ứng dụng Good-Fast-Cheap</h1>
+<div>
+  <div id="good">
+    <label class="switch">
+      <input type="checkbox" id="goodCheckbox">
+      <span class="slider round"></span>
+    </label> GOOD
+  </div>
+  <br>
+  <div id="fast">
+    <label class="switch">
+      <input type="checkbox" id="fastCheckbox">
+      <span class="slider round"></span>
+    </label> FAST
+  </div>
+  <br>
+  <div id="cheap">
+    <label class="switch">
+      <input type="checkbox" id="cheapCheckbox">
+      <span class="slider round"></span>
+    </label> CHEAP
+  </div>
+</div>
+
+<script>
+  const good = document.getElementById("goodCheckbox");
+  const fast = document.getElementById("fastCheckbox");
+  const cheap = document.getElementById("cheapCheckbox");
+
+  // Thêm sự kiện cho các checkbox
+  good.addEventListener("change", updateStatus);
+  fast.addEventListener("change", updateStatus);
+  cheap.addEventListener("change", updateStatus);
+
+  function updateStatus() {
+    if (good.checked && fast.checked) {
+      cheap.checked= false;
+    }
+    if (good.checked && cheap.checked) {
+        fast.checked = false;
+    }
+    else if (fast.checked && cheap.checked) {
+        good.checked = false;
+    }
+    }
+</script>
+</body>
+</html>
+
+
